@@ -44,7 +44,7 @@ class UserController extends Controller
         }
         $user = User::where('username',$username)->first();
         if(!$user){
-            return response()->json('user not found',200);
+            return response()->json('user not found',404);
         }
         return response()->json($user,200);
     }
